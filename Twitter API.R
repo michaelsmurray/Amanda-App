@@ -62,9 +62,8 @@ amanda.tweets.corpus <-  tm_map(amanda.tweets.corpus, function(x)removeWords(x,s
 
 
 # generate wordcloud
-wordcloud(amanda.tweets.corpus,min.freq = 2, scale=c(7,0.5),colors=brewer.pal(8, "Dark2"),  
+wordcloud(amanda.tweets.corpus,min.freq = 2, scale = c(4,2),colors=brewer.pal(8, "Dark2"),  
           random.color= TRUE, random.order = FALSE, max.words = 150)
-
 
 
 
