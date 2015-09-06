@@ -15,7 +15,6 @@ setup_twitter_oauth("Ymh4NPPegflFdn2kkV1xLkE8p",
                     "JpNPprfhHlSx1YoKx67evZlR8jwwowFyAE5UBbZsRSjvP")  
 # Get tweets from Amanda's timeline and put them in a vector
 amanda.tweets <- userTimeline('AmandaBurnsFire',n = 3200,includeRts = FALSE)
-amanda.tweets <- sapply(amanda.tweets, function(x) x$getText())
 
 # don't know why piping shits the bed here
 # amanda.tweets <- tolower(amanda.tweets) %>%
