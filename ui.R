@@ -1,25 +1,27 @@
-## Example UI
+# ui.R
 
-fluidPage(
-  # Application title
-  titlePanel("Word Cloud"),
+shinyUI(fluidPage(
+  titlePanel("censusVis"),
   
   sidebarLayout(
-    # Sidebar with a slider and selection inputs
     sidebarPanel(
-      actionButton("update", "Change"),
-      hr(),
-      sliderInput("freq",
-                  "Minimum Frequency:",
-                  min = 1,  max = 50, value = 15),
-      sliderInput("max",
-                  "Maximum Number of Words:",
-                  min = 1,  max = 300,  value = 100)
-    ),
+      helpText("Create demographic maps with 
+               information from the 2010 US Census."),
+      
+      selectInput("var", 
+                  label = "Choose a variable to display",
+                  choices = c("Percent White", "Percent Black",
+                              "Percent Hispanic", "Percent Asian"),
+                  selected = "Percent White"),
+      
+      sliderInput("range", 
+                  label = "Range of interest:",
+                  min = 0, max = 100, value = c(0, 100))
+      ),
     
-    # Show Word Cloud
     mainPanel(
-      plotOutput("plot")
+      textOutput("text1"),
+      textOutput("text2")
     )
   )
-)
+))
